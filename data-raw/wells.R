@@ -23,6 +23,10 @@ for(i in 1:nrow(wells)) {
 bad_wells <- bad_wells[-1]
 
 plot(wells[-bad_wells,])
+wells <- wells[-bad_wells, ]
+
+setwd('E:/Riparian/wellbeing')
+usethis::use_data(wells)
 
 pump_dates <- as.Date(wells$PUMP_TEST_)
 pump_dates[pump_dates == '1899-12-30'] <- NA
